@@ -10,10 +10,15 @@ const port = Number(process.env.PORT) || 5000;
 
 app.use(
   cors({
-    origin: ['http://localhost:4200', 'http://127.0.0.1:4200'],
+    origin: [
+      'http://localhost:4200',
+      'http://127.0.0.1:4200',
+      'https://ecommerce-web-xi-rose.vercel.app',
+    ],
     credentials: true,
   }),
 );
+
 app.use(express.json());
 
 app.get('/api/health', (req, res) => {
